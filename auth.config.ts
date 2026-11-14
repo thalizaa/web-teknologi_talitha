@@ -1,6 +1,7 @@
 import type { NextAuthConfig } from 'next-auth';
 
 export const authConfig = {
+  basePath: '/api/auth',
   pages: {
     signIn: '/login',
   },
@@ -10,9 +11,11 @@ export const authConfig = {
       const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
 
       if (isOnDashboard) {
-        return isLoggedIn; // Jika di dashboard, izinkan jika sudah login
-      } 
-      
+        if (isLoggedIn) return true;
+        return false; // Redirect unauthenticated users to login page
+      } else if (isLoggedIn) {
+        return Response.redirect(new URL('/dashboard', nextUrl));
+      }
       return true;
     },
   },
