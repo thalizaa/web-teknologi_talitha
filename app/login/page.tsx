@@ -26,7 +26,7 @@ function LoginFormContent() {
           src="/logo/uia-logo.png"
           width={500}
           height={360}
-          className="hidden block"
+          className="hidden md:block"
           alt="Banner UIA"
           priority
         />
