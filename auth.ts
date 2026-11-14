@@ -6,12 +6,10 @@ import { z } from 'zod';
 import bcrypt from 'bcrypt';
 import type { User } from '@/app/lib/definitions';
 
-// Gunakan koneksi postgres langsung yang sesuai dengan proyek Anda
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 async function getUser(email: string): Promise<User | undefined> {
   try {
-    // Library 'postgres' mengembalikan array data secara langsung
     const data = await sql<User[]>`SELECT * FROM users WHERE email = ${email}`;
     return data[0];
   } catch (error) {
@@ -20,7 +18,7 @@ async function getUser(email: string): Promise<User | undefined> {
   }
 }
 
-export const { auth, signIn, signOut } = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
     Credentials({
