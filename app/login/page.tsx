@@ -24,9 +24,9 @@ function LoginFormContent() {
       <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
         <Image
           src="/uia-logo.png"
-          width={300}
-          height={160}
-          className="hidden md:block"
+          width={500}
+          height={360}
+          className="hidden block"
           alt="Banner UIA"
           priority
         />

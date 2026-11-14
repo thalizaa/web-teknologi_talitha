@@ -11,8 +11,8 @@ export default function Page() {
         {/* <AcmeLogo /> */}
         <Image
           src="/uia-logo.png"
-          width={300}
-          height={160}
+          width={500}
+          height={360}
           className="hidden md:block"
           alt="Banner UIA"
         />
