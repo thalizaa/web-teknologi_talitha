@@ -12,7 +12,7 @@ export default function SideNav() {
       >
         <div className="w-32 text-white md:w-40">
           <Image
-            src="/uia-logo.png"
+            src="logo/uia-logo.png"
             width={500}
             height={360}
             alt="Banner UIA"
